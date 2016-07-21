@@ -2369,7 +2369,7 @@ sub NotifySlack() {
 
     my $channel = $sk{'channel'};
     if ($options{'slack_channel'}) { $channel = $options{'slack_channel'}; }
-    my %post = ('text' => $sk{'message'}, 'channel' => $channel);
+    my %post = ('text' => $sk{'message'}, 'channel' => $channel, 'username' => $sk{'username'});
     my $json = encode_json \%post;
     my $url = $sk{'webhook_url'};
     
